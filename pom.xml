@@ -48,14 +48,14 @@
                     <group>Application/Collectors</group>
                     <!--icon>src/main/resources/icon.gif</icon-->
                     <packager>AGuther</packager>
-                    <prefix>/opt/aguther</prefix>
+                    <prefix>/opt/rpm-test</prefix>
                     <!--changelogFile>src/changelog</changelogFile-->
                     <defineStatements>
                        <defineStatement>_unpackaged_files_terminate_build 0</defineStatement>
                     </defineStatements>
                     <mappings>
                         <mapping>
-                            <directory>/opt/aguther</directory>
+                            <directory>/opt/rpm-test</directory>
                             <filemode>777</filemode>
                             <username>user</username>
                             <groupname>users</groupname>
@@ -65,19 +65,29 @@
                                 </source>
                             </sources>
                         </mapping>
+                        <mapping>
+                            <directory>/opt/rpm-test/scripts</directory>
+                            <filemode>777</filemode>
+                            <username>user</username>
+                            <groupname>users</groupname>
+                            <sources>
+                                <source>
+                                    <location>src/main/scripts</location>
+                                </source>
+                            </sources>
+                        </mapping>
                     </mappings>
                     <preinstallScriptlet>
-                        <script>echo "pre-install script"</script>
+                        <scriptFile>src/main/scripts/install_preinstall.sh</scriptFile>
+                        <fileEncoding>utf-8</fileEncoding>
                     </preinstallScriptlet>
                     <postinstallScriptlet>
-                        <script>echo "post-install script"</script>
-                        <!--scriptFile>src/main/scripts/postinstall</scriptFile>
-                        <fileEncoding>utf-8</fileEncoding-->
+                        <scriptFile>src/main/scripts/install_postinstall.sh</scriptFile>
+                        <fileEncoding>utf-8</fileEncoding>
                     </postinstallScriptlet>
                     <preremoveScriptlet>
-                        <script>echo "pre-remove script"</script>
-                        <!--scriptFile>src/main/scripts/preremove</scriptFile>
-                        <fileEncoding>utf-8</fileEncoding-->
+                        <scriptFile>src/main/scripts/install_preremove.sh</scriptFile>
+                        <fileEncoding>utf-8</fileEncoding>
                     </preremoveScriptlet>
                 </configuration>
             </plugin>

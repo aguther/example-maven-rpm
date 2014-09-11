@@ -76,6 +76,14 @@
                                 </source>
                             </sources>
                         </mapping>
+                        <mapping>
+                            <directory>/etc/profile.d</directory>
+                            <sources>
+                                <softlinkSource>
+                                    <location>/opt/rpm-test/scripts/environment.sh</location>
+                                </softlinkSource>
+                            </sources>
+                        </mapping>
                     </mappings>
                     <preinstallScriptlet>
                         <scriptFile>src/main/scripts/install_preinstall.sh</scriptFile>

@@ -72,7 +72,7 @@
                             <groupname>users</groupname>
                             <sources>
                                 <source>
-                                    <location>src/main/scripts</location>
+                                    <location>src/main/scripts/environment.sh</location>
                                 </source>
                             </sources>
                         </mapping>

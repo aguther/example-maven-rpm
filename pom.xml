@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.test</groupId>
@@ -28,7 +28,7 @@
         </dependency>
     </dependencies>
 
-<build>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -46,12 +46,12 @@
                     <license>Prop License (c), AGuther</license>
                     <distribution>Test 1.0</distribution>
                     <group>Application/Collectors</group>
-                    <!--icon>src/main/resources/icon.gif</icon-->
+                    <!--icon>src/main/resources/icon.gif</icon -->
                     <packager>AGuther</packager>
                     <prefix>/opt/rpm-test</prefix>
-                    <!--changelogFile>src/changelog</changelogFile-->
+                    <!--changelogFile>src/changelog</changelogFile -->
                     <defineStatements>
-                       <defineStatement>_unpackaged_files_terminate_build 0</defineStatement>
+                        <defineStatement>_unpackaged_files_terminate_build 0</defineStatement>
                     </defineStatements>
                     <mappings>
                         <mapping>

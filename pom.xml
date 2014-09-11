@@ -56,9 +56,9 @@
                     <mappings>
                         <mapping>
                             <directory>/opt/rpm-test</directory>
-                            <filemode>777</filemode>
-                            <username>user</username>
-                            <groupname>users</groupname>
+                            <filemode>755</filemode>
+                            <username>root</username>
+                            <!--groupname>root</groupname-->
                             <sources>
                                 <source>
                                     <location>target/classes</location>
@@ -67,9 +67,9 @@
                         </mapping>
                         <mapping>
                             <directory>/opt/rpm-test/scripts</directory>
-                            <filemode>777</filemode>
-                            <username>user</username>
-                            <groupname>users</groupname>
+                            <filemode>755</filemode>
+                            <username>root</username>
+                            <!--groupname>root</groupname-->
                             <sources>
                                 <source>
                                     <location>src/main/scripts/environment.sh</location>

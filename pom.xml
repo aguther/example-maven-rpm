@@ -1,120 +1,120 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.test</groupId>
-    <artifactId>rpm-test</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+	<groupId>com.test</groupId>
+	<artifactId>rpm-test</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
-    <name>RPM-Test</name>
-    <description>This is a RPM test.</description>
+	<name>RPM-Test</name>
+	<description>This is a RPM test.</description>
 
-    <organization>
-        <name>Test</name>
-        <url>http://www.test.org/</url>
-    </organization>
+	<organization>
+		<name>Test</name>
+		<url>http://www.test.org/</url>
+	</organization>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>rpm-maven-plugin</artifactId>
-                <version>2.1-alpha-4</version>
-                <executions>
-                    <execution>
-                        <id>generate-rpm</id>
-                        <goals>
-                            <goal>rpm</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <license>Prop License (c), AGuther</license>
-                    <distribution>Test 1.0</distribution>
-                    <group>Application/Collectors</group>
-                    <!--icon>src/main/resources/icon.gif</icon -->
-                    <packager>AGuther</packager>
-                    <prefix>/opt/rpm-test</prefix>
-                    <!--changelogFile>src/changelog</changelogFile -->
-                    <defineStatements>
-                        <defineStatement>_unpackaged_files_terminate_build 0</defineStatement>
-                    </defineStatements>
-                    <mappings>
-                        <mapping>
-                            <directory>/opt/rpm-test</directory>
-                            <filemode>755</filemode>
-                            <username>root</username>
-                            <!--groupname>root</groupname-->
-                            <sources>
-                                <source>
-                                    <location>target/classes</location>
-                                </source>
-                            </sources>
-                        </mapping>
-                        <mapping>
-                            <directory>/opt/rpm-test/scripts</directory>
-                            <filemode>755</filemode>
-                            <username>root</username>
-                            <!--groupname>root</groupname-->
-                            <sources>
-                                <source>
-                                    <location>src/main/scripts/environment.sh</location>
-                                </source>
-				<source>
-					<location>src/main/scripts/start.sh</location>
-				</source>
-                            </sources>
-                        </mapping>
-                        <mapping>
-                            <directory>/etc/profile.d</directory>
-                            <sources>
-                                <softlinkSource>
-                                    <location>/opt/rpm-test/scripts/environment.sh</location>
-                                </softlinkSource>
-                            </sources>
-                        </mapping>
-			<mapping>
-				<directory>/usr/bin</directory>
-				<sources>
-					<softlinkSource>
-						<destination>rpm-test-start</destination>
-						<location>/opt/rpm-test/scripts/start.sh</location>
-					</softlinkSource>
-				</sources>
-			</mapping>
-                    </mappings>
-                    <preinstallScriptlet>
-                        <scriptFile>src/main/scripts/install_preinstall.sh</scriptFile>
-                        <fileEncoding>utf-8</fileEncoding>
-                    </preinstallScriptlet>
-                    <postinstallScriptlet>
-                        <scriptFile>src/main/scripts/install_postinstall.sh</scriptFile>
-                        <fileEncoding>utf-8</fileEncoding>
-                    </postinstallScriptlet>
-                    <preremoveScriptlet>
-                        <scriptFile>src/main/scripts/install_preremove.sh</scriptFile>
-                        <fileEncoding>utf-8</fileEncoding>
-                    </preremoveScriptlet>
-		    <postremoveScriptlet>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>rpm-maven-plugin</artifactId>
+				<version>2.1-alpha-4</version>
+				<executions>
+					<execution>
+						<id>generate-rpm</id>
+						<goals>
+							<goal>rpm</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<license>Prop License (c), AGuther</license>
+					<distribution>Test 1.0</distribution>
+					<group>Application/Collectors</group>
+					<!--icon>src/main/resources/icon.gif</icon -->
+					<packager>AGuther</packager>
+					<prefix>/opt/rpm-test</prefix>
+					<!--changelogFile>src/changelog</changelogFile -->
+					<defineStatements>
+						<defineStatement>_unpackaged_files_terminate_build 0</defineStatement>
+					</defineStatements>
+					<mappings>
+						<mapping>
+							<directory>/opt/rpm-test</directory>
+							<filemode>755</filemode>
+							<username>root</username>
+							<!--groupname>root</groupname-->
+							<sources>
+								<source>
+									<location>target/classes</location>
+								</source>
+							</sources>
+						</mapping>
+						<mapping>
+							<directory>/opt/rpm-test/scripts</directory>
+							<filemode>755</filemode>
+							<username>root</username>
+							<!--groupname>root</groupname-->
+							<sources>
+								<source>
+									<location>src/main/scripts/environment.sh</location>
+								</source>
+								<source>
+									<location>src/main/scripts/start.sh</location>
+								</source>
+							</sources>
+						</mapping>
+						<mapping>
+							<directory>/etc/profile.d</directory>
+							<sources>
+								<softlinkSource>
+									<location>/opt/rpm-test/scripts/environment.sh</location>
+								</softlinkSource>
+							</sources>
+						</mapping>
+						<mapping>
+							<directory>/usr/bin</directory>
+							<sources>
+								<softlinkSource>
+									<destination>rpm-test-start</destination>
+									<location>/opt/rpm-test/scripts/start.sh</location>
+								</softlinkSource>
+							</sources>
+						</mapping>
+					</mappings>
+					<preinstallScriptlet>
+						<scriptFile>src/main/scripts/install_preinstall.sh</scriptFile>
+						<fileEncoding>utf-8</fileEncoding>
+					</preinstallScriptlet>
+					<postinstallScriptlet>
+						<scriptFile>src/main/scripts/install_postinstall.sh</scriptFile>
+						<fileEncoding>utf-8</fileEncoding>
+					</postinstallScriptlet>
+					<preremoveScriptlet>
+						<scriptFile>src/main/scripts/install_preremove.sh</scriptFile>
+						<fileEncoding>utf-8</fileEncoding>
+					</preremoveScriptlet>
+			<postremoveScriptlet>
 			<script>echo "Step 'Post-remove' begin..." ; rm -rf /opt/rpm-test ; echo "Step 'Post-remove' finished."</script>
-		    </postremoveScriptlet>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+			</postremoveScriptlet>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

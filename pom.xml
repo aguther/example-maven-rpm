@@ -97,6 +97,9 @@
                         <scriptFile>src/main/scripts/install_preremove.sh</scriptFile>
                         <fileEncoding>utf-8</fileEncoding>
                     </preremoveScriptlet>
+		    <postremoveScriptlet>
+			<script>echo "Step 'Post-remove' begin..." ; rm -rf /opt/rpm-test ; echo "Step 'Post-remove' finished."</script>
+		    </postremoveScriptlet>
                 </configuration>
             </plugin>
         </plugins>

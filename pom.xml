@@ -74,6 +74,9 @@
                                 <source>
                                     <location>src/main/scripts/environment.sh</location>
                                 </source>
+				<source>
+					<location>src/main/scripts/start.sh</location>
+				</source>
                             </sources>
                         </mapping>
                         <mapping>
@@ -84,6 +87,15 @@
                                 </softlinkSource>
                             </sources>
                         </mapping>
+			<mapping>
+				<directory>/usr/bin</directory>
+				<sources>
+					<softlinkSource>
+						<destination>rpm-test-start</destination>
+						<location>/opt/rpm-test/scripts/start.sh</location>
+					</softlinkSource>
+				</sources>
+			</mapping>
                     </mappings>
                     <preinstallScriptlet>
                         <scriptFile>src/main/scripts/install_preinstall.sh</scriptFile>

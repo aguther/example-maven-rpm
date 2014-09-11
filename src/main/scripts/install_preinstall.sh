@@ -1,7 +1,7 @@
 #!\bin\bash
 
 # starting
-echo "Processing pre-install tasks..."
+echo "Step 'Pre-install' begin..."
 
 # finished
-echo "Pre-install tasks finished."
+echo "Step 'Pre-install' finished."

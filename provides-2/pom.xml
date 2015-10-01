@@ -4,7 +4,7 @@
 
 	<groupId>com.test</groupId>
 	<artifactId>provides-2</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>jar</packaging>
 
 	<name>Provides-2</name>
@@ -44,6 +44,9 @@
 						<provide>test-provide-1.0</provide>
 						<provide>sub-provide-2</provide>
 					</provides>
+					<conflicts>
+						<conflict>provides-1</conflict>
+					</conflicts>
 					<mappings>
 						<mapping>
 							<directory>/opt/provides-2</directory>
